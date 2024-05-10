@@ -1,3 +1,4 @@
+// Ben
 import java.awt.Color;
 
 import javax.swing.JButton;
@@ -63,18 +64,26 @@ public class theApp {
             buttons[i] = new JButton("");
             buttons[i].setBounds((i % 3) * 100, (i / 3) * 100, 100, 100);
             buttons[i].addActionListener(e -> {
+                
                 // Create a pop-up message dialog 
                 if (turn[0] && !used[buttonIndex]) {
+
+                    // manzoor
                     turn[0] = false;
                     buttons[buttonIndex].setBackground(Color.BLACK);
                     updatePage();
                     board[buttonIndex] = 1;
+
+                // Ben
                 } else if (!used[buttonIndex]) {
+
+                    // manzoor
                     turn[0] = true;
                     buttons[buttonIndex].setBackground(Color.BLUE);
                     updatePage();
                     board[buttonIndex] = 2;
                 }
+                // Ben
                 used[buttonIndex] = true;
 
                 if(determineWinner(board) != "No winner yet") {
@@ -86,6 +95,8 @@ public class theApp {
         
         updatePage();
     }
+
+    // Manzoor
     public void updatePage() {
         // Set the custom panel as the content pane of the frame 
         frame.setContentPane(panel);
